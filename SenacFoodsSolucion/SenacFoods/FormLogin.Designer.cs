@@ -30,11 +30,12 @@
         {
             panel1 = new Panel();
             panel2 = new Panel();
-            textLogin = new TextBox();
-            textSenha = new TextBox();
-            label2 = new Label();
-            label1 = new Label();
+            btnFechar = new Button();
             btnEntrar = new Button();
+            textSenha = new TextBox();
+            textLogin = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnFechar);
             panel2.Controls.Add(btnEntrar);
             panel2.Controls.Add(textSenha);
             panel2.Controls.Add(textLogin);
@@ -61,55 +63,19 @@
             panel2.Size = new Size(516, 450);
             panel2.TabIndex = 1;
             // 
-            // textLogin
+            // btnFechar
             // 
-            textLogin.BackColor = Color.Red;
-            textLogin.BorderStyle = BorderStyle.None;
-            textLogin.Font = new Font("Arial Narrow", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textLogin.ForeColor = SystemColors.InactiveBorder;
-            textLogin.Location = new Point(56, 82);
-            textLogin.Name = "textLogin";
-            textLogin.Size = new Size(398, 42);
-            textLogin.TabIndex = 0;
-            textLogin.Text = "USUARIO";
-            // 
-            // textSenha
-            // 
-            textSenha.BackColor = Color.Red;
-            textSenha.BorderStyle = BorderStyle.None;
-            textSenha.Font = new Font("Arial Narrow", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textSenha.ForeColor = SystemColors.InactiveBorder;
-            textSenha.Location = new Point(56, 156);
-            textSenha.Name = "textSenha";
-            textSenha.Size = new Size(398, 42);
-            textSenha.TabIndex = 0;
-            textSenha.Text = "SENHA";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Red;
-            label2.Font = new Font("Segoe UI", 9F);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(50, 183);
-            label2.Name = "label2";
-            label2.Size = new Size(418, 25);
-            label2.TabIndex = 1;
-            label2.Text = "__________________________________________________________";
-           
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Red;
-            label1.Font = new Font("Segoe UI", 9F);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(50, 104);
-            label1.Name = "label1";
-            label1.Size = new Size(418, 25);
-            label1.TabIndex = 1;
-            label1.Text = "__________________________________________________________";
-            
+            btnFechar.FlatAppearance.BorderSize = 0;
+            btnFechar.FlatStyle = FlatStyle.Flat;
+            btnFechar.Font = new Font("Segoe UI", 13F);
+            btnFechar.ForeColor = Color.Transparent;
+            btnFechar.Location = new Point(465, 3);
+            btnFechar.Name = "btnFechar";
+            btnFechar.Size = new Size(39, 43);
+            btnFechar.TabIndex = 3;
+            btnFechar.Text = "X";
+            btnFechar.UseVisualStyleBackColor = true;
+            btnFechar.Click += btnFechar_Click;
             // 
             // btnEntrar
             // 
@@ -125,6 +91,55 @@
             btnEntrar.TabIndex = 2;
             btnEntrar.Text = "ENTRAR";
             btnEntrar.UseVisualStyleBackColor = true;
+            btnEntrar.Click += btnEntrar_Click;
+            // 
+            // textSenha
+            // 
+            textSenha.BackColor = Color.Red;
+            textSenha.BorderStyle = BorderStyle.None;
+            textSenha.Font = new Font("Arial Narrow", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textSenha.ForeColor = SystemColors.InactiveBorder;
+            textSenha.Location = new Point(56, 156);
+            textSenha.Name = "textSenha";
+            textSenha.Size = new Size(398, 42);
+            textSenha.TabIndex = 0;
+            textSenha.Text = "SENHA";
+            // 
+            // textLogin
+            // 
+            textLogin.BackColor = Color.Red;
+            textLogin.BorderStyle = BorderStyle.None;
+            textLogin.Font = new Font("Arial Narrow", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textLogin.ForeColor = SystemColors.InactiveBorder;
+            textLogin.Location = new Point(56, 82);
+            textLogin.Name = "textLogin";
+            textLogin.Size = new Size(398, 42);
+            textLogin.TabIndex = 0;
+            textLogin.Text = "USUARIO";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Red;
+            label1.Font = new Font("Segoe UI", 9F);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(50, 104);
+            label1.Name = "label1";
+            label1.Size = new Size(418, 25);
+            label1.TabIndex = 1;
+            label1.Text = "__________________________________________________________";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Red;
+            label2.Font = new Font("Segoe UI", 9F);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(50, 183);
+            label2.Name = "label2";
+            label2.Size = new Size(418, 25);
+            label2.TabIndex = 1;
+            label2.Text = "__________________________________________________________";
             // 
             // FormLogin
             // 
@@ -152,5 +167,6 @@
         private Label label2;
         private Button btnEntrar;
         private Label label1;
+        private Button btnFechar;
     }
 }
