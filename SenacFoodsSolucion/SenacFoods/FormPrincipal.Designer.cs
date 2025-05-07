@@ -35,6 +35,7 @@
             btnCardapio = new Button();
             btnFechar = new Button();
             btnMinimizar = new Button();
+            lblMensagem = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -141,12 +142,24 @@
             btnMinimizar.UseVisualStyleBackColor = true;
             btnMinimizar.Click += btnMinimizar_Click;
             // 
+            // lblMensagem
+            // 
+            lblMensagem.AutoSize = true;
+            lblMensagem.Font = new Font("Arial", 14F);
+            lblMensagem.ForeColor = Color.White;
+            lblMensagem.Location = new Point(385, 43);
+            lblMensagem.Name = "lblMensagem";
+            lblMensagem.Size = new Size(180, 32);
+            lblMensagem.TabIndex = 2;
+            lblMensagem.Text = "lblMensagem";
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Red;
             ClientSize = new Size(974, 416);
+            Controls.Add(lblMensagem);
             Controls.Add(btnMinimizar);
             Controls.Add(btnFechar);
             Controls.Add(groupBox1);
@@ -156,6 +169,7 @@
             Text = "FormPrincipal";
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -167,5 +181,6 @@
         private Button btnPedidoozinha;
         private Button btnFechar;
         private Button btnMinimizar;
+        private Label lblMensagem;
     }
 }

@@ -12,9 +12,11 @@ namespace SenacFoods
 {
     public partial class FormPrincipal : Form
     {
-        public FormPrincipal()
+        public FormPrincipal(string nome, string senha)
         {
             InitializeComponent();
+            lblMensagem.Text = " Bem vindo " + nome;
+
         }
 
         private void btnFechar_Click(object sender, EventArgs e)

@@ -116,6 +116,7 @@
             textLogin.Size = new Size(398, 42);
             textLogin.TabIndex = 0;
             textLogin.Text = "USUARIO";
+            textLogin.TextChanged += textLogin_TextChanged;
             // 
             // label1
             // 
