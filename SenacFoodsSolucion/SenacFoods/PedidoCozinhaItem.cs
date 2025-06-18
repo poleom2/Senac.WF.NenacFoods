@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 
 namespace SenacFoods
 {
-    public class Comanda
+    public class PedidoCozinhaItem
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public int NUmeroMesa { get; set; }
-        public string NombreCliente { get; set; }
-        public int SituacaoComanda { get; set; }
+        public int PedidoCozinhaId { get; set; }
+        public int ComandaItemId { get; set; }
     }
 }
