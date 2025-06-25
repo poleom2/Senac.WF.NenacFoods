@@ -28,7 +28,7 @@ namespace SenacFoods
             {
                 var usuario = banco
                     .Usuarios
-                    .FirstOrDefault(u =>u.Email == nome && u.Senha ==senha);
+                    .FirstOrDefault(u =>u.Email.ToLower()== nome.ToLower() && u.Senha ==senha);
                 if(usuario is not null ) 
                     
                     usuarioValido = true;
