@@ -30,75 +30,94 @@
         {
             btn = new Button();
             groupBox1 = new GroupBox();
-            dataGridView1 = new DataGridView();
+            btnItemC = new Button();
             button1 = new Button();
+            dataGridView1 = new DataGridView();
             label1 = new Label();
             textBox1 = new TextBox();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            mySqlCommandBuilder1 = new MySqlConnector.MySqlCommandBuilder();
+            button3 = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // btn
             // 
-            btn.Location = new Point(1086, 546);
-            btn.Margin = new Padding(3, 5, 3, 5);
+            btn.BackColor = Color.Red;
+            btn.Location = new Point(752, 434);
+            btn.Margin = new Padding(2, 4, 2, 4);
             btn.Name = "btn";
-            btn.Size = new Size(168, 52);
+            btn.Size = new Size(134, 41);
             btn.TabIndex = 1;
             btn.Text = "Excluir";
-            btn.UseVisualStyleBackColor = true;
+            btn.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.White;
+            groupBox1.Controls.Add(btnItemC);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(btn);
             groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Location = new Point(18, 230);
-            groupBox1.Margin = new Padding(3, 5, 3, 5);
+            groupBox1.Location = new Point(5, 84);
+            groupBox1.Margin = new Padding(2, 4, 2, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 5, 3, 5);
-            groupBox1.Size = new Size(1485, 623);
+            groupBox1.Padding = new Padding(2, 4, 2, 4);
+            groupBox1.Size = new Size(1034, 475);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cardapio";
             // 
-            // dataGridView1
+            // btnItemC
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(78, 46);
-            dataGridView1.Margin = new Padding(3, 5, 3, 5);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1353, 490);
-            dataGridView1.TabIndex = 0;
+            btnItemC.BackColor = Color.Lime;
+            btnItemC.Location = new Point(27, 35);
+            btnItemC.Name = "btnItemC";
+            btnItemC.Size = new Size(112, 34);
+            btnItemC.TabIndex = 5;
+            btnItemC.Text = "+ Item";
+            btnItemC.UseVisualStyleBackColor = false;
+            btnItemC.Click += button2_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(1263, 546);
-            button1.Margin = new Padding(3, 5, 3, 5);
+            button1.BackColor = Color.Lime;
+            button1.Location = new Point(878, 434);
+            button1.Margin = new Padding(2, 4, 2, 4);
             button1.Name = "button1";
-            button1.Size = new Size(168, 52);
+            button1.Size = new Size(134, 41);
             button1.TabIndex = 3;
             button1.Text = "Editar";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(37, 76);
+            dataGridView1.Margin = new Padding(2, 4, 2, 4);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(975, 350);
+            dataGridView1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(81, 50);
+            label1.Location = new Point(32, 22);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(134, 38);
+            label1.Size = new Size(103, 30);
             label1.TabIndex = 3;
             label1.Text = "Pesquisar";
             label1.Click += label1_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(242, 42);
-            textBox1.Margin = new Padding(3, 5, 3, 5);
+            textBox1.Location = new Point(164, 22);
+            textBox1.Margin = new Padding(2, 4, 2, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(505, 45);
+            textBox1.Size = new Size(736, 37);
             textBox1.TabIndex = 4;
             // 
             // sqlCommand1
@@ -106,17 +125,38 @@
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
+            // mySqlCommandBuilder1
+            // 
+            mySqlCommandBuilder1.DataAdapter = null;
+            mySqlCommandBuilder1.QuotePrefix = "`";
+            mySqlCommandBuilder1.QuoteSuffix = "`";
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Transparent;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Location = new Point(988, 12);
+            button3.Name = "button3";
+            button3.Size = new Size(51, 34);
+            button3.TabIndex = 5;
+            button3.Text = "X";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
             // FrmCardapio
             // 
-            AutoScaleDimensions = new SizeF(15F, 38F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1542, 901);
+            BackColor = Color.FromArgb(255, 255, 128);
+            ClientSize = new Size(1045, 564);
+            Controls.Add(button3);
             Controls.Add(textBox1);
             Controls.Add(label1);
             Controls.Add(groupBox1);
-            Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 5, 3, 5);
+            Margin = new Padding(2, 4, 2, 4);
             Name = "FrmCardapio";
             Text = "FrmCardapio";
             Load += FrmCardapio_Load;
@@ -135,5 +175,9 @@
         private Label label1;
         private TextBox textBox1;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private Button button2;
+        private Button btnItemC;
+        private MySqlConnector.MySqlCommandBuilder mySqlCommandBuilder1;
+        private Button button3;
     }
 }

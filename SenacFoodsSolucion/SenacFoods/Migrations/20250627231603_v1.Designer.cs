@@ -11,7 +11,7 @@ using SenacFoods;
 namespace SenacFoods.Migrations
 {
     [DbContext(typeof(ComandaDBContest))]
-    [Migration("20250618001630_v1")]
+    [Migration("20250627231603_v1")]
     partial class v1
     {
         /// <inheritdoc />
