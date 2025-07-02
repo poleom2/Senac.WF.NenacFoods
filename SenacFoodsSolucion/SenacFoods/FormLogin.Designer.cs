@@ -117,6 +117,7 @@
             textLogin.TabIndex = 0;
             textLogin.Text = "USUARIO";
             textLogin.TextChanged += textLogin_TextChanged;
+            textLogin.Leave += textLogin_Leave;
             // 
             // label1
             // 

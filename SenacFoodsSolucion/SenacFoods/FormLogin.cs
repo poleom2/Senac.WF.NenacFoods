@@ -9,14 +9,14 @@ namespace SenacFoods
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-           bool loginValido = validarLogin(textLogin.Text, textSenha.Text);
-            
-            if (loginValido)
-            { 
+            bool loginValido = validarLogin(textLogin.Text, textSenha.Text);
 
-            this.Hide();
-            var formPrincipal = new FormPrincipal(textLogin.Text, textSenha.Text);
-            formPrincipal.Show();
+            if (loginValido)
+            {
+
+                this.Hide();
+                var formPrincipal = new FormPrincipal(textLogin.Text, textSenha.Text);
+                formPrincipal.Show();
             }
         }
 
@@ -28,16 +28,16 @@ namespace SenacFoods
             {
                 var usuario = banco
                     .Usuarios
-                    .FirstOrDefault(u =>u.Email.ToLower()== nome.ToLower() && u.Senha ==senha);
-                if(usuario is not null ) 
-                    
+                    .FirstOrDefault(u => u.Email.ToLower() == nome.ToLower() && u.Senha == senha);
+                if (usuario is not null)
+
                     usuarioValido = true;
-             }
-           if(usuarioValido)
+            }
+            if (usuarioValido)
             {
                 return true;
             }
-            else 
+            else
             {
                 MessageBox.Show("Login ou Senha Invalidos");
             }
@@ -52,8 +52,18 @@ namespace SenacFoods
 
         private void textLogin_TextChanged(object sender, EventArgs e)
         {
-            if (textLogin.Text == "USUARIO"){ 
-            textLogin.Text = string.Empty;}
+            if (textLogin.Text == "USUARIO")
+            {
+                textLogin.Text = string.Empty;
+            }
+        }
+
+        private void textLogin_Leave(object sender, EventArgs e)
+        {
+            if (textLogin.Text == string.Empty)
+            {
+                textLogin.Text = "Usuario";
+            }
         }
     }
 }
