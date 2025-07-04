@@ -36,11 +36,13 @@
             btnFechar = new Button();
             btnMinimizar = new Button();
             lblMensagem = new Label();
+            button1 = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(btnUsuario);
             groupBox1.Controls.Add(btnPedidoozinha);
             groupBox1.Controls.Add(btnComanda);
@@ -48,7 +50,7 @@
             groupBox1.ForeColor = Color.White;
             groupBox1.Location = new Point(29, 141);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(883, 219);
+            groupBox1.Size = new Size(933, 224);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Senac Foods";
@@ -60,7 +62,7 @@
             btnUsuario.FlatAppearance.BorderSize = 0;
             btnUsuario.Font = new Font("Arial Narrow", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnUsuario.ForeColor = Color.Black;
-            btnUsuario.Location = new Point(648, 56);
+            btnUsuario.Location = new Point(571, 56);
             btnUsuario.Name = "btnUsuario";
             btnUsuario.Size = new Size(149, 122);
             btnUsuario.TabIndex = 0;
@@ -75,7 +77,7 @@
             btnPedidoozinha.FlatAppearance.BorderSize = 0;
             btnPedidoozinha.Font = new Font("Arial Narrow", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPedidoozinha.ForeColor = Color.Black;
-            btnPedidoozinha.Location = new Point(451, 56);
+            btnPedidoozinha.Location = new Point(387, 56);
             btnPedidoozinha.Name = "btnPedidoozinha";
             btnPedidoozinha.Size = new Size(149, 122);
             btnPedidoozinha.TabIndex = 0;
@@ -90,7 +92,7 @@
             btnComanda.FlatAppearance.BorderSize = 0;
             btnComanda.Font = new Font("Arial Narrow", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnComanda.ForeColor = Color.Black;
-            btnComanda.Location = new Point(254, 56);
+            btnComanda.Location = new Point(197, 56);
             btnComanda.Name = "btnComanda";
             btnComanda.Size = new Size(149, 122);
             btnComanda.TabIndex = 0;
@@ -105,7 +107,7 @@
             btnCardapio.FlatAppearance.BorderSize = 0;
             btnCardapio.Font = new Font("Arial Narrow", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCardapio.ForeColor = Color.Black;
-            btnCardapio.Location = new Point(56, 56);
+            btnCardapio.Location = new Point(6, 56);
             btnCardapio.Name = "btnCardapio";
             btnCardapio.Size = new Size(149, 122);
             btnCardapio.TabIndex = 0;
@@ -153,12 +155,26 @@
             lblMensagem.TabIndex = 2;
             lblMensagem.Text = "lblMensagem";
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(192, 0, 0);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(767, 60);
+            button1.Name = "button1";
+            button1.Size = new Size(139, 122);
+            button1.TabIndex = 1;
+            button1.Text = "Mesa";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Red;
-            ClientSize = new Size(974, 416);
+            ClientSize = new Size(974, 376);
             Controls.Add(lblMensagem);
             Controls.Add(btnMinimizar);
             Controls.Add(btnFechar);
@@ -182,5 +198,6 @@
         private Button btnFechar;
         private Button btnMinimizar;
         private Label lblMensagem;
+        private Button button1;
     }
 }

@@ -105,14 +105,10 @@ namespace SenacFoods
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(23, 26);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(103, 30);
-            label1.TabIndex = 3;
-            label1.Text = "Pesquisar";
-            label1.Click += label1_Click;
+            label1.Size = new Size(100, 23);
+            label1.TabIndex = 2;
             // 
             // txtPesquisa
             // 
@@ -149,7 +145,7 @@ namespace SenacFoods
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 255, 128);
-            ClientSize = new Size(1045, 564);
+            ClientSize = new Size(1045, 581);
             Controls.Add(btnFechar);
             Controls.Add(txtPesquisa);
             Controls.Add(label1);

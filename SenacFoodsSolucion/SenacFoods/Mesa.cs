@@ -16,5 +16,9 @@ namespace SenacFoods
         public int NumeroMesa { get; set; }
         public int SituacaoMesa { get; set; }
 
+        internal static object ToList()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
