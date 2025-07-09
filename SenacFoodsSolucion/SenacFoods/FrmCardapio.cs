@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace SenacFoods
 {
     public partial class FrmCardapio : Form
     {
+        CardapioItem? CardapioSelacionado;
         public FrmCardapio()
         {
             InitializeComponent();
@@ -48,26 +50,63 @@ namespace SenacFoods
             BuscarCardapio();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
             BuscarCardapio();
         }
 
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                CardapioSelacionado = dataGridView1.Rows[e.RowIndex].DataBoundItem as CardapioItem;
+                btnEditar.Enabled = true;
+
+            }
+        }
+
+        private void btnEditar_Click_1(object sender, EventArgs e)
+        {
+            if (CardapioSelacionado != null)
+            {
+                var frmEditar = new FrmCardapioCad2(CardapioSelacionado);
+                frmEditar.ShowDialog();
+                BuscarCardapio();
+                CardapioSelacionado = null;
+            }
+        }
+
+        private void btnFechar_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnEscluir_Click(object sender, EventArgs e)
+        {
+            if (CardapioSelacionado != null)
+            {
+
+            
+                using (var bancoDeDados = new ComandaDBContest())
+                {
+                    bancoDeDados.CardapioItems.Remove(CardapioSelacionado);
+                    bancoDeDados.SaveChanges();
+                }MessageBox.Show("Cardapio excluido com suceso!","Suceso",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                BuscarCardapio();
+                CardapioSelacionado = null;
+            }
+            else
+            {
+                MessageBox.Show("Selecione um cardapio para excluir","Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning );
+            }
+        }
 
     }
 }

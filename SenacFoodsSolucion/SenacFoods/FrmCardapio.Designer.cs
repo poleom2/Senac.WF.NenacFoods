@@ -29,9 +29,9 @@ namespace SenacFoods
         /// </summary>
         private void InitializeComponent()
         {
-            btnExcluir = new Button();
             groupBox1 = new GroupBox();
             btnItemC = new Button();
+            btnEscluir = new Button();
             btnEditar = new Button();
             dataGridView1 = new DataGridView();
             label1 = new Label();
@@ -39,28 +39,17 @@ namespace SenacFoods
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             mySqlCommandBuilder1 = new MySqlConnector.MySqlCommandBuilder();
             btnFechar = new Button();
+            btnExcluir = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // btnExcluir
-            // 
-            btnExcluir.BackColor = Color.Red;
-            btnExcluir.Location = new Point(752, 434);
-            btnExcluir.Margin = new Padding(2, 4, 2, 4);
-            btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(134, 41);
-            btnExcluir.TabIndex = 1;
-            btnExcluir.Text = "Excluir";
-            btnExcluir.UseVisualStyleBackColor = false;
-            btnExcluir.Click += btnExcluir_Click;
             // 
             // groupBox1
             // 
             groupBox1.BackColor = Color.White;
             groupBox1.Controls.Add(btnItemC);
+            groupBox1.Controls.Add(btnEscluir);
             groupBox1.Controls.Add(btnEditar);
-            groupBox1.Controls.Add(btnExcluir);
             groupBox1.Controls.Add(dataGridView1);
             groupBox1.Location = new Point(5, 99);
             groupBox1.Margin = new Padding(2, 4, 2, 4);
@@ -82,17 +71,30 @@ namespace SenacFoods
             btnItemC.UseVisualStyleBackColor = false;
             btnItemC.Click += btnItemC_Click;
             // 
+            // btnEscluir
+            // 
+            btnEscluir.BackColor = Color.Red;
+            btnEscluir.Location = new Point(772, 434);
+            btnEscluir.Margin = new Padding(2, 4, 2, 4);
+            btnEscluir.Name = "btnEscluir";
+            btnEscluir.Size = new Size(134, 41);
+            btnEscluir.TabIndex = 3;
+            btnEscluir.Text = "Escluir";
+            btnEscluir.UseVisualStyleBackColor = false;
+            btnEscluir.Click += btnEscluir_Click;
+            // 
             // btnEditar
             // 
             btnEditar.BackColor = Color.Lime;
-            btnEditar.Location = new Point(878, 434);
+            btnEditar.Enabled = false;
+            btnEditar.Location = new Point(896, 434);
             btnEditar.Margin = new Padding(2, 4, 2, 4);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(134, 41);
             btnEditar.TabIndex = 3;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
-            btnEditar.Click += button1_Click;
+            btnEditar.Click += btnEditar_Click_1;
             // 
             // dataGridView1
             // 
@@ -102,6 +104,7 @@ namespace SenacFoods
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(1028, 350);
             dataGridView1.TabIndex = 6;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // label1
             // 
@@ -138,7 +141,15 @@ namespace SenacFoods
             btnFechar.Size = new Size(75, 44);
             btnFechar.TabIndex = 0;
             btnFechar.Text = "X";
-            btnFechar.Click += btnFechar_Click;
+            btnFechar.Click += btnFechar_Click_1;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(5, 26);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(120, 35);
+            btnExcluir.TabIndex = 6;
+            btnExcluir.Text = "Pesquisa";
             // 
             // FrmCardapio
             // 
@@ -149,6 +160,7 @@ namespace SenacFoods
             Controls.Add(btnFechar);
             Controls.Add(txtPesquisa);
             Controls.Add(label1);
+            Controls.Add(btnExcluir);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
@@ -162,14 +174,7 @@ namespace SenacFoods
             PerformLayout();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         #endregion
-
-        private Button btnExcluir;
         private GroupBox groupBox1;
         private DataGridView dataGridView1;
         private Button btnEditar;
@@ -180,5 +185,7 @@ namespace SenacFoods
         private Button btnItemC;
         private MySqlConnector.MySqlCommandBuilder mySqlCommandBuilder1;
         private Button btnFechar;
+        private Button btnEscluir;
+        private Button btnExcluir;
     }
 }

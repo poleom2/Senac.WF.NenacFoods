@@ -16,6 +16,10 @@ namespace SenacFoods
         {
             InitializeComponent();
         }
+        public FrmCardapioCad2(CardapioItem cardapioItem)
+        {
+            InitializeComponent();
+        }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
