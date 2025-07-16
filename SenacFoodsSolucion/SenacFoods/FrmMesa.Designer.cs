@@ -31,12 +31,12 @@
             label1 = new Label();
             label2 = new Label();
             groupBox1 = new GroupBox();
+            btnExcluir = new Button();
             btnMesas = new Button();
-            btnCancelar = new Button();
             btnEditar = new Button();
             dataGridView1 = new DataGridView();
-            btnFechar = new Button();
             txtPesquisa = new TextBox();
+            btnFechar = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -65,8 +65,8 @@
             // groupBox1
             // 
             groupBox1.BackColor = Color.White;
+            groupBox1.Controls.Add(btnExcluir);
             groupBox1.Controls.Add(btnMesas);
-            groupBox1.Controls.Add(btnCancelar);
             groupBox1.Controls.Add(btnEditar);
             groupBox1.Controls.Add(dataGridView1);
             groupBox1.Controls.Add(label2);
@@ -78,6 +78,20 @@
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.BackColor = Color.Red;
+            btnExcluir.FlatAppearance.BorderSize = 0;
+            btnExcluir.FlatStyle = FlatStyle.Flat;
+            btnExcluir.Location = new Point(460, 418);
+            btnExcluir.Margin = new Padding(4);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(110, 39);
+            btnExcluir.TabIndex = 4;
+            btnExcluir.Text = "Excluir";
+            btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnMesas
             // 
@@ -91,18 +105,6 @@
             btnMesas.UseVisualStyleBackColor = false;
             btnMesas.Click += btnMesas_Click;
             // 
-            // btnCancelar
-            // 
-            btnCancelar.BackColor = Color.Red;
-            btnCancelar.Location = new Point(424, 418);
-            btnCancelar.Margin = new Padding(4);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(146, 44);
-            btnCancelar.TabIndex = 4;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = false;
-            btnCancelar.Click += btnCancelar_Click;
-            // 
             // btnEditar
             // 
             btnEditar.BackColor = Color.Lime;
@@ -113,29 +115,18 @@
             btnEditar.TabIndex = 3;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(8, 122);
+            dataGridView1.Location = new Point(11, 122);
             dataGridView1.Margin = new Padding(4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(703, 288);
             dataGridView1.TabIndex = 2;
-            // 
-            // btnFechar
-            // 
-            btnFechar.FlatAppearance.BorderSize = 0;
-            btnFechar.FlatStyle = FlatStyle.Flat;
-            btnFechar.Location = new Point(669, 15);
-            btnFechar.Margin = new Padding(4);
-            btnFechar.Name = "btnFechar";
-            btnFechar.Size = new Size(57, 44);
-            btnFechar.TabIndex = 4;
-            btnFechar.Text = "X";
-            btnFechar.UseVisualStyleBackColor = true;
-            btnFechar.Click += btnFechar_Click;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // txtPesquisa
             // 
@@ -146,14 +137,27 @@
             txtPesquisa.TabIndex = 5;
             txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
+            // btnFechar
+            // 
+            btnFechar.FlatAppearance.BorderSize = 0;
+            btnFechar.FlatStyle = FlatStyle.Flat;
+            btnFechar.Location = new Point(662, 13);
+            btnFechar.Margin = new Padding(4);
+            btnFechar.Name = "btnFechar";
+            btnFechar.Size = new Size(57, 44);
+            btnFechar.TabIndex = 6;
+            btnFechar.Text = "X";
+            btnFechar.UseVisualStyleBackColor = true;
+            btnFechar.Click += btnFechar_Click;
+            // 
             // FrmMesa
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 0, 0);
             ClientSize = new Size(735, 548);
-            Controls.Add(txtPesquisa);
             Controls.Add(btnFechar);
+            Controls.Add(txtPesquisa);
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -176,9 +180,9 @@
         private GroupBox groupBox1;
         private Button btnEditar;
         private DataGridView dataGridView1;
-        private Button btnCancelar;
         private Button btnMesas;
-        private Button btnFechar;
+        private Button btnExcluir;
         private TextBox txtPesquisa;
+        private Button btnFechar;
     }
 }
