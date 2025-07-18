@@ -91,22 +91,27 @@ namespace SenacFoods
             if (CardapioSelacionado != null)
             {
 
-            
+
                 using (var bancoDeDados = new ComandaDBContest())
                 {
                     bancoDeDados.CardapioItems.Remove(CardapioSelacionado);
                     bancoDeDados.SaveChanges();
-                }MessageBox.Show("Cardapio excluido com suceso!","Suceso",
+                }
+                MessageBox.Show("Cardapio excluido com suceso!", "Suceso",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                 BuscarCardapio();
                 CardapioSelacionado = null;
             }
             else
             {
-                MessageBox.Show("Selecione um cardapio para excluir","Aviso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning );
+                MessageBox.Show("Selecione um cardapio para excluir", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

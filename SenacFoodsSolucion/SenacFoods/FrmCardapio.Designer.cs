@@ -34,7 +34,6 @@ namespace SenacFoods
             btnEscluir = new Button();
             btnEditar = new Button();
             dataGridView1 = new DataGridView();
-            label1 = new Label();
             txtPesquisa = new TextBox();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             mySqlCommandBuilder1 = new MySqlConnector.MySqlCommandBuilder();
@@ -59,6 +58,7 @@ namespace SenacFoods
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cardapio";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // btnItemC
             // 
@@ -106,13 +106,6 @@ namespace SenacFoods
             dataGridView1.TabIndex = 6;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
-            // label1
-            // 
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(100, 23);
-            label1.TabIndex = 2;
-            // 
             // txtPesquisa
             // 
             txtPesquisa.Location = new Point(131, 26);
@@ -150,6 +143,7 @@ namespace SenacFoods
             btnExcluir.Size = new Size(120, 35);
             btnExcluir.TabIndex = 6;
             btnExcluir.Text = "Pesquisa";
+            btnExcluir.Click += this.btnExcluir_Click;
             // 
             // FrmCardapio
             // 
@@ -159,7 +153,6 @@ namespace SenacFoods
             ClientSize = new Size(1045, 581);
             Controls.Add(btnFechar);
             Controls.Add(txtPesquisa);
-            Controls.Add(label1);
             Controls.Add(btnExcluir);
             Controls.Add(groupBox1);
             Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -178,7 +171,6 @@ namespace SenacFoods
         private GroupBox groupBox1;
         private DataGridView dataGridView1;
         private Button btnEditar;
-        private Label label1;
         private TextBox txtPesquisa;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private Button button2;
