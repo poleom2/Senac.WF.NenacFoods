@@ -94,12 +94,7 @@ namespace SenacFoods
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-            Close();
-        }
-
-        private void btnExcluir_Click_1(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

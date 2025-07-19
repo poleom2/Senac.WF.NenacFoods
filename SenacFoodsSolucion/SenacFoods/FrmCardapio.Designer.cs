@@ -143,7 +143,6 @@ namespace SenacFoods
             btnExcluir.Size = new Size(120, 35);
             btnExcluir.TabIndex = 6;
             btnExcluir.Text = "Pesquisa";
-            btnExcluir.Click += this.btnExcluir_Click;
             // 
             // FrmCardapio
             // 
