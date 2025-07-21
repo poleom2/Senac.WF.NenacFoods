@@ -34,7 +34,7 @@
             groupBox1 = new GroupBox();
             comboBox1 = new ComboBox();
             btnSalvar = new Button();
-            txtComfirmarSenha = new TextBox();
+            txtConfirmarSenha = new TextBox();
             txtSenha = new TextBox();
             txtName = new TextBox();
             txtEmail = new TextBox();
@@ -76,7 +76,7 @@
             groupBox1.BackgroundImageLayout = ImageLayout.None;
             groupBox1.Controls.Add(comboBox1);
             groupBox1.Controls.Add(btnSalvar);
-            groupBox1.Controls.Add(txtComfirmarSenha);
+            groupBox1.Controls.Add(txtConfirmarSenha);
             groupBox1.Controls.Add(txtSenha);
             groupBox1.Controls.Add(txtName);
             groupBox1.Controls.Add(txtEmail);
@@ -92,7 +92,7 @@
             groupBox1.Margin = new Padding(4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(801, 542);
+            groupBox1.Size = new Size(842, 542);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Cardapio";
@@ -119,13 +119,13 @@
             btnSalvar.UseVisualStyleBackColor = false;
             btnSalvar.Click += btnSalvar_Click;
             // 
-            // txtComfirmarSenha
+            // txtConfirmarSenha
             // 
-            txtComfirmarSenha.Location = new Point(31, 331);
-            txtComfirmarSenha.Margin = new Padding(4);
-            txtComfirmarSenha.Name = "txtComfirmarSenha";
-            txtComfirmarSenha.Size = new Size(759, 31);
-            txtComfirmarSenha.TabIndex = 5;
+            txtConfirmarSenha.Location = new Point(31, 331);
+            txtConfirmarSenha.Margin = new Padding(4);
+            txtConfirmarSenha.Name = "txtConfirmarSenha";
+            txtConfirmarSenha.Size = new Size(759, 31);
+            txtConfirmarSenha.TabIndex = 5;
             // 
             // txtSenha
             // 
@@ -246,7 +246,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumOrchid;
-            ClientSize = new Size(807, 617);
+            ClientSize = new Size(848, 617);
             Controls.Add(btnFechar);
             Controls.Add(button3);
             Controls.Add(label1);
@@ -279,7 +279,7 @@
         private Label label6;
         private Button btnFechar;
         private ComboBox comboBox1;
-        private TextBox txtComfirmarSenha;
+        private TextBox txtConfirmarSenha;
         private Label label7;
         private ErrorProvider errorProvider1;
     }

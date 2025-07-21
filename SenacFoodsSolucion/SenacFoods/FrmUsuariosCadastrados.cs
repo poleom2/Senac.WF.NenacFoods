@@ -85,15 +85,19 @@ namespace SenacFoods
         private bool _validaCamposParaAtualizarUsuario()
         {
             errorProvider1.Clear();
+            if (txtEmail.Text.IsNullOrEmpty())
+            {
+                errorProvider1.SetError(txtEmail, "O campo EMAIL é obrigatório.");
+            }
 
             if (txtSenha.Text.Length > 6)
             {
                 errorProvider1.SetError(txtSenha, "A senha não pode ter mais que 6 dígitos.");
                 
             }
-            if (txtSenha.Text != txtComfirmarSenha.Text)
+            if (txtConfirmarSenha.Text != txtConfirmarSenha.Text)
             {
-                errorProvider1.SetError(txtComfirmarSenha, "As senhas não coincidem.");
+                errorProvider1.SetError(txtConfirmarSenha, "As senhas não coincidem.");
    
             }
             if (txtName.Text.IsNullOrEmpty())
@@ -125,7 +129,7 @@ namespace SenacFoods
                 var usuario = new Usuario()
                 {
                     Name = Name,
-                    Email = Senha,
+                    Email = Email,
                     Senha = Senha,
                 };
 
@@ -135,7 +139,7 @@ namespace SenacFoods
 
                 banco.Usuarios.Update(usuario);
                 banco.SaveChanges();
-                MessageBox.Show("Senha cadastrada com sucesso!", "Sucesso",
+                MessageBox.Show("Usuario cadastrada com sucesso!", "Sucesso",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

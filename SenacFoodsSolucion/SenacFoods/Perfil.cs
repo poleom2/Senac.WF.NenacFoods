@@ -8,15 +8,11 @@ using System.Threading.Tasks;
 
 namespace SenacFoods
 {
-    public class Usuario
+    public class Perfil
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id {  get; set; }
-        public string Name {  get; set; }
-        public string Email {  get; set; }
-        public string Senha {  get; set; }
-        public bool Ativo {  get; set; }
-        public int PerfilId { get; set; }
+        public string Descricao {  get; set; } = string.Empty;
     }
 }
