@@ -32,7 +32,7 @@
             button3 = new Button();
             label1 = new Label();
             groupBox1 = new GroupBox();
-            comboBox1 = new ComboBox();
+            cmbPerfil = new ComboBox();
             btnSalvar = new Button();
             txtConfirmarSenha = new TextBox();
             txtSenha = new TextBox();
@@ -47,8 +47,10 @@
             label6 = new Label();
             btnFechar = new Button();
             errorProvider1 = new ErrorProvider(components);
+            perfilBindingSource = new BindingSource(components);
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)perfilBindingSource).BeginInit();
             SuspendLayout();
             // 
             // button3
@@ -74,7 +76,7 @@
             // 
             groupBox1.BackColor = Color.WhiteSmoke;
             groupBox1.BackgroundImageLayout = ImageLayout.None;
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(cmbPerfil);
             groupBox1.Controls.Add(btnSalvar);
             groupBox1.Controls.Add(txtConfirmarSenha);
             groupBox1.Controls.Add(txtSenha);
@@ -97,13 +99,14 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Cardapio";
             // 
-            // comboBox1
+            // cmbPerfil
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(31, 432);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(210, 33);
-            comboBox1.TabIndex = 8;
+            cmbPerfil.FormattingEnabled = true;
+            cmbPerfil.Items.AddRange(new object[] { "Adminitador", "Gerente", "Garção", "Jeche de cozinha", "Caixa" });
+            cmbPerfil.Location = new Point(31, 432);
+            cmbPerfil.Name = "cmbPerfil";
+            cmbPerfil.Size = new Size(210, 33);
+            cmbPerfil.TabIndex = 8;
             // 
             // btnSalvar
             // 
@@ -229,7 +232,7 @@
             // 
             btnFechar.FlatAppearance.BorderSize = 0;
             btnFechar.FlatStyle = FlatStyle.Flat;
-            btnFechar.Location = new Point(753, 9);
+            btnFechar.Location = new Point(784, 9);
             btnFechar.Name = "btnFechar";
             btnFechar.Size = new Size(49, 34);
             btnFechar.TabIndex = 11;
@@ -240,6 +243,10 @@
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
+            // 
+            // perfilBindingSource
+            // 
+            perfilBindingSource.DataSource = typeof(Perfil);
             // 
             // FrmUsuariosCadastrados
             // 
@@ -258,6 +265,7 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)perfilBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -278,9 +286,10 @@
         private Label label5;
         private Label label6;
         private Button btnFechar;
-        private ComboBox comboBox1;
+        private ComboBox cmbPerfil;
         private TextBox txtConfirmarSenha;
         private Label label7;
         private ErrorProvider errorProvider1;
+        private BindingSource perfilBindingSource;
     }
 }

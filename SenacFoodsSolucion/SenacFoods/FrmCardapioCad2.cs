@@ -40,7 +40,7 @@ namespace SenacFoods
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (_CardapioItem != null)
+            if (_CardapioItem == null)
             {
                 InserirCardapio();
             }
@@ -73,6 +73,10 @@ namespace SenacFoods
 
 
             }
+            MessageBox.Show("Cardapio altualizado com suceso!", "Suceso",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+
         }
 
         private void InserirCardapio()
@@ -102,7 +106,8 @@ namespace SenacFoods
                 //salva as alterações
                 banco.SaveChanges();
             }
-            MessageBox.Show("Cardapio salva com suceso!", "Suceso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Cardapio salva com suceso!", "Suceso",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
 
         }

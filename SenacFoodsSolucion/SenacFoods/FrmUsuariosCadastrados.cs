@@ -68,7 +68,7 @@ namespace SenacFoods
                 usuario.Name = Name;
                 usuario.Email = Email;
                 usuario.Senha = Senha;
-                
+
                 var isDadosDoUsuarioValidos = _validaCamposParaAtualizarUsuario();
 
                 if (isDadosDoUsuarioValidos == false) return;
@@ -90,15 +90,20 @@ namespace SenacFoods
                 errorProvider1.SetError(txtEmail, "O campo EMAIL é obrigatório.");
             }
 
-            if (txtSenha.Text.Length > 6)
+            if (txtSenha.Text.Length < 6)
             {
-                errorProvider1.SetError(txtSenha, "A senha não pode ter mais que 6 dígitos.");
-                
+                errorProvider1.SetError(txtSenha, "A senha tem que ter mais que 6 dígitos.");
+
             }
-            if (txtConfirmarSenha.Text != txtConfirmarSenha.Text)
+            if (txtConfirmarSenha.Text != txtSenha.Text)
             {
                 errorProvider1.SetError(txtConfirmarSenha, "As senhas não coincidem.");
-   
+
+            }
+            if (txtConfirmarSenha.Text.Length < 6)
+            {
+                errorProvider1.SetError(txtConfirmarSenha, "A senha tem que ter mais que 6 dígitos.");
+
             }
             if (txtName.Text.IsNullOrEmpty())
             {
@@ -107,6 +112,10 @@ namespace SenacFoods
             if (txtSenha.Text.IsNullOrEmpty())
             {
                 errorProvider1.SetError(txtSenha, "O campo SENHA é obrigatório.");
+            }
+            if (cmbPerfil.Text.IsNullOrEmpty())
+            {
+                errorProvider1.SetError(cmbPerfil, "O campo SENHA é obrigatório.");
             }
 
             if (!errorProvider1.HasErrors) return true;
@@ -123,6 +132,7 @@ namespace SenacFoods
                 string Name = txtName.Text;
                 string Email = txtEmail.Text;
                 string Senha = txtSenha.Text;
+                String PerfilId = cmbPerfil.Text;
 
 
 
@@ -131,6 +141,7 @@ namespace SenacFoods
                     Name = Name,
                     Email = Email,
                     Senha = Senha,
+                    Perfil = PerfilId,
                 };
 
                 var isDadosDoUsuarioValidos = _validaCamposParaAtualizarUsuario();
@@ -155,6 +166,6 @@ namespace SenacFoods
             this.Close();
         }
 
-        
+       
     }
 }
